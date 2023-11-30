@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "my-example-proyect",
+    "dev": "my-example-proyect"
+  },
+  "targets": {},
+  "etags": {}
+}
