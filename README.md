@@ -3,7 +3,7 @@
 ### Node version
 18.x
 
-### Instalar y ejecutar
+### Instalar
 Instalar Firebase CLI:
 ```bash
  npm install -g firebase-tools  
@@ -20,13 +20,23 @@ Agregar .env con un alias ejemplo .env.dev
 ```bash 
 firebase use --add  
 ```
+### Desplegar
 Uso del las variables de entorno de dev
 ```bash 
 firebase use dev  
 ```
+Accedemos a la carpeta functions y ejecutamos el siguiente comando:
+```bash 
+cd functions && npm install
+```
 Desplegar el proyecto:
 ```bash 
 firebase deploy  --only functions  
+```
+### Ejecutar localmente
+Accedemos a la carpeta functions y ejecutamos el siguiente comando:
+```bash 
+cd functions && npm install
 ```
 Empezar a emular el proyecto localmente:
 ```bash 
