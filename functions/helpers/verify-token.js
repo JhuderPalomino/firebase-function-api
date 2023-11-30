@@ -1,10 +1,15 @@
 // Ejemplo en un servidor Node.js con el paquete 'jsonwebtoken'
 const admin = require('firebase-admin');
-const { FIREBASE_CONFIG } = require("../static/config");
+const { FIREBASE_CREDENTIALS } = require("../static/config");
 
 // Middleware para verificar el token en las solicitudes
-
-admin.initializeApp(FIREBASE_CONFIG);
+admin.initializeApp({
+  credential: admin.credential.cert({
+    projectId: FIREBASE_CREDENTIALS.projectId,
+    privateKey: FIREBASE_CREDENTIALS.privateKey,
+    clientEmail: FIREBASE_CREDENTIALS.clientEmail,
+  }),
+});
 
 const verifyToken = async  (req, res, next) => {
   const token = req.headers.authorization;
@@ -28,7 +33,7 @@ const verifyToken = async  (req, res, next) => {
       }
     })
     .catch((error) => {
-      console.log(error.errorInfo)
+      console.log(error)
       return res.status(401).json({ message: 'Token no válido' });
     });
 }

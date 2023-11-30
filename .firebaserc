@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "my-example-proyect",
-    "dev": "my-example-proyect"
+    "default": "my-example-proyect"
   },
   "targets": {},
   "etags": {}

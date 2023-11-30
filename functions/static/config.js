@@ -1,15 +1,12 @@
+const firebaseCredentials = require('../firebase-credentials.json');
 
 module.exports = {
   DB_INSTANCE: null,
   MONGO_DATABASE_URL: process.env.MONGO_DATABASE_URL,
-  FIREBASE_CONFIG: {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID,
-    measurementId: process.env.MEASUREMENT_ID
+  FIREBASE_CREDENTIALS: {
+    projectId: firebaseCredentials.project_id,
+    privateKey: firebaseCredentials.private_key,
+    clientEmail: firebaseCredentials.client_email,
   }
 }
 

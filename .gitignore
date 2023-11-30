@@ -64,7 +64,8 @@ functions/node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-functions/.env.*
 functions/.env
+
+functions/firebase-credentials.json
 # Idea
 .idea/*
